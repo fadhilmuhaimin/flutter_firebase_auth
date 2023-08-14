@@ -22,6 +22,14 @@ class AuthService {
         print(e.toString());
     }
   }
+  static Future<User?> signIn(String email, String password) async{
+    try{
+      User? user = (await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password)).user;
+      return user;
+    }catch(e){
+        print(e.toString());
+    }
+  }
 
   static Future<void> signOut() async{
     _auth.signOut();

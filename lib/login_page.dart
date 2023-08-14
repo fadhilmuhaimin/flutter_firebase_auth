@@ -42,6 +42,12 @@ class LoginPage extends StatelessWidget {
                 await AuthService.signUp(emailController.text,passwordController.text);
               },
               ),
+            ElevatedButton(
+              child: const Text("SignIn"),
+              onPressed: () async {
+                await AuthService.signIn(emailController.text,passwordController.text);
+              },
+              ),
           ],
         ),
       ),
